@@ -38,11 +38,11 @@ func getLength(r *http.Request) int {
 	if param != "" {
 		i, err := strconv.Atoi(param)
 		if err != nil {
-			return 8
+			return 64
 		}
 
 		return i
 	}
 
-	return 8
+	return 64
 }
