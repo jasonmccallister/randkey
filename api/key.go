@@ -14,6 +14,8 @@ type response struct {
 
 // Handler is the endpoint that creates the serverless function for Zeit
 func Handler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
 	l := getLength(r)
 
 	resp := response{
@@ -25,8 +27,8 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
-	w.WriteHeader(http.StatusOK)
+	w.
+		w.WriteHeader(http.StatusOK)
 	w.Write(body)
 }
 
